@@ -4,246 +4,316 @@
 #
 #    pip-compile --output-file=requirements.txt pyproject.toml
 #
-alitra==1.1.3
+alitra==1.1.5
     # via
     #   isar
     #   isar-robot (pyproject.toml)
+annotated-doc==0.0.2
+    # via fastapi
 annotated-types==0.7.0
     # via pydantic
-anyio==4.4.0
+anyio==4.11.0
     # via
     #   httpx
     #   starlette
-    #   watchfiles
-azure-core==1.30.2
+asgiref==3.10.0
+    # via opentelemetry-instrumentation-asgi
+azure-core==1.36.0
     # via
+    #   azure-core-tracing-opentelemetry
     #   azure-identity
     #   azure-keyvault-secrets
+    #   azure-monitor-opentelemetry
+    #   azure-monitor-opentelemetry-exporter
     #   azure-storage-blob
-    #   opencensus-ext-azure
-azure-identity==1.17.0
+    #   msrest
+azure-core-tracing-opentelemetry==1.0.0b12
+    # via azure-monitor-opentelemetry
+azure-identity==1.25.1
     # via
+    #   azure-monitor-opentelemetry-exporter
     #   isar
-    #   opencensus-ext-azure
-azure-keyvault-secrets==4.8.0
+azure-keyvault-secrets==4.10.0
     # via isar
-azure-storage-blob==12.20.0
+azure-monitor-opentelemetry==1.8.1
+    # via isar
+azure-monitor-opentelemetry-exporter==1.0.0b44
+    # via
+    #   azure-monitor-opentelemetry
+    #   isar
+azure-storage-blob==12.27.0
     # via isar
 backoff==2.2.1
     # via isar
-cachetools==5.3.3
-    # via google-auth
-certifi==2024.6.2
+certifi==2025.10.5
     # via
     #   httpcore
     #   httpx
+    #   msrest
     #   requests
-cffi==1.16.0
+cffi==2.0.0
     # via cryptography
-charset-normalizer==3.3.2
+charset-normalizer==3.4.4
     # via requests
-click==8.1.7
+click==8.3.0
     # via
     #   isar
-    #   typer
     #   uvicorn
-cryptography==42.0.8
+cryptography==46.0.3
     # via
     #   azure-identity
     #   azure-storage-blob
     #   fastapi-azure-auth
     #   msal
     #   pyjwt
-dacite==1.8.1
+dacite==1.9.2
     # via
     #   alitra
     #   isar
-dnspython==2.6.1
-    # via email-validator
-email-validator==2.2.0
-    # via fastapi
-fastapi==0.111.0
+dependency-injector==4.48.2
+    # via isar
+fastapi==0.120.0
     # via
     #   fastapi-azure-auth
     #   isar
-fastapi-azure-auth==4.4.0
+fastapi-azure-auth==5.2.0
     # via isar
-fastapi-cli==0.0.4
-    # via fastapi
-google-api-core==2.19.0
-    # via opencensus
-google-auth==2.30.0
-    # via google-api-core
-googleapis-common-protos==1.63.1
-    # via google-api-core
-h11==0.14.0
+fixedint==0.1.6
+    # via azure-monitor-opentelemetry-exporter
+googleapis-common-protos==1.71.0
+    # via
+    #   opentelemetry-exporter-otlp-proto-grpc
+    #   opentelemetry-exporter-otlp-proto-http
+grpcio==1.76.0
+    # via opentelemetry-exporter-otlp-proto-grpc
+h11==0.16.0
     # via
     #   httpcore
     #   uvicorn
-httpcore==1.0.5
+httpcore==1.0.9
     # via httpx
-httptools==0.6.1
-    # via uvicorn
-httpx==0.27.0
-    # via
-    #   fastapi
-    #   fastapi-azure-auth
-idna==3.7
+httpx==0.28.1
+    # via fastapi-azure-auth
+idna==3.11
     # via
     #   anyio
-    #   email-validator
     #   httpx
     #   requests
-injector==0.21.0
-    # via isar
-isar==1.22.0
+importlib-metadata==8.7.0
+    # via opentelemetry-api
+isar==1.34.3
     # via isar-robot (pyproject.toml)
-isodate==0.6.1
+isodate==0.7.2
     # via
     #   azure-keyvault-secrets
     #   azure-storage-blob
-jinja2==3.1.4
-    # via fastapi
-markdown-it-py==3.0.0
-    # via rich
-markupsafe==2.1.5
-    # via jinja2
-mdurl==0.1.2
-    # via markdown-it-py
-msal==1.28.1
+    #   msrest
+msal==1.34.0
     # via
     #   azure-identity
     #   msal-extensions
-msal-extensions==1.1.0
+msal-extensions==1.3.1
     # via azure-identity
-numpy==2.0.0
+msrest==0.7.1
+    # via azure-monitor-opentelemetry-exporter
+numpy==2.3.4
     # via
     #   alitra
     #   isar
     #   scipy
-opencensus==0.11.4
+oauthlib==3.3.1
+    # via requests-oauthlib
+opentelemetry-api==1.38.0
     # via
-    #   opencensus-ext-azure
-    #   opencensus-ext-logging
-    #   opencensus-ext-requests
-opencensus-context==0.1.3
-    # via opencensus
-opencensus-ext-azure==1.1.13
+    #   azure-core-tracing-opentelemetry
+    #   azure-monitor-opentelemetry-exporter
+    #   isar
+    #   opentelemetry-exporter-otlp-proto-grpc
+    #   opentelemetry-exporter-otlp-proto-http
+    #   opentelemetry-instrumentation
+    #   opentelemetry-instrumentation-asgi
+    #   opentelemetry-instrumentation-dbapi
+    #   opentelemetry-instrumentation-django
+    #   opentelemetry-instrumentation-fastapi
+    #   opentelemetry-instrumentation-flask
+    #   opentelemetry-instrumentation-psycopg2
+    #   opentelemetry-instrumentation-requests
+    #   opentelemetry-instrumentation-urllib
+    #   opentelemetry-instrumentation-urllib3
+    #   opentelemetry-instrumentation-wsgi
+    #   opentelemetry-sdk
+    #   opentelemetry-semantic-conventions
+opentelemetry-exporter-otlp==1.38.0
     # via isar
-opencensus-ext-logging==0.1.1
-    # via isar
-opencensus-ext-requests==0.8.0
-    # via isar
-orjson==3.10.5
-    # via fastapi
-packaging==24.1
-    # via msal-extensions
+opentelemetry-exporter-otlp-proto-common==1.38.0
+    # via
+    #   opentelemetry-exporter-otlp-proto-grpc
+    #   opentelemetry-exporter-otlp-proto-http
+opentelemetry-exporter-otlp-proto-grpc==1.38.0
+    # via opentelemetry-exporter-otlp
+opentelemetry-exporter-otlp-proto-http==1.38.0
+    # via opentelemetry-exporter-otlp
+opentelemetry-instrumentation==0.59b0
+    # via
+    #   opentelemetry-instrumentation-asgi
+    #   opentelemetry-instrumentation-dbapi
+    #   opentelemetry-instrumentation-django
+    #   opentelemetry-instrumentation-fastapi
+    #   opentelemetry-instrumentation-flask
+    #   opentelemetry-instrumentation-psycopg2
+    #   opentelemetry-instrumentation-requests
+    #   opentelemetry-instrumentation-urllib
+    #   opentelemetry-instrumentation-urllib3
+    #   opentelemetry-instrumentation-wsgi
+opentelemetry-instrumentation-asgi==0.59b0
+    # via opentelemetry-instrumentation-fastapi
+opentelemetry-instrumentation-dbapi==0.59b0
+    # via opentelemetry-instrumentation-psycopg2
+opentelemetry-instrumentation-django==0.59b0
+    # via azure-monitor-opentelemetry
+opentelemetry-instrumentation-fastapi==0.59b0
+    # via
+    #   azure-monitor-opentelemetry
+    #   isar
+opentelemetry-instrumentation-flask==0.59b0
+    # via azure-monitor-opentelemetry
+opentelemetry-instrumentation-psycopg2==0.59b0
+    # via azure-monitor-opentelemetry
+opentelemetry-instrumentation-requests==0.59b0
+    # via azure-monitor-opentelemetry
+opentelemetry-instrumentation-urllib==0.59b0
+    # via azure-monitor-opentelemetry
+opentelemetry-instrumentation-urllib3==0.59b0
+    # via azure-monitor-opentelemetry
+opentelemetry-instrumentation-wsgi==0.59b0
+    # via
+    #   opentelemetry-instrumentation-django
+    #   opentelemetry-instrumentation-flask
+opentelemetry-proto==1.38.0
+    # via
+    #   opentelemetry-exporter-otlp-proto-common
+    #   opentelemetry-exporter-otlp-proto-grpc
+    #   opentelemetry-exporter-otlp-proto-http
+opentelemetry-resource-detector-azure==0.1.5
+    # via azure-monitor-opentelemetry
+opentelemetry-sdk==1.38.0
+    # via
+    #   azure-monitor-opentelemetry
+    #   azure-monitor-opentelemetry-exporter
+    #   isar
+    #   opentelemetry-exporter-otlp-proto-grpc
+    #   opentelemetry-exporter-otlp-proto-http
+    #   opentelemetry-resource-detector-azure
+opentelemetry-semantic-conventions==0.59b0
+    # via
+    #   opentelemetry-instrumentation
+    #   opentelemetry-instrumentation-asgi
+    #   opentelemetry-instrumentation-dbapi
+    #   opentelemetry-instrumentation-django
+    #   opentelemetry-instrumentation-fastapi
+    #   opentelemetry-instrumentation-flask
+    #   opentelemetry-instrumentation-requests
+    #   opentelemetry-instrumentation-urllib
+    #   opentelemetry-instrumentation-urllib3
+    #   opentelemetry-instrumentation-wsgi
+    #   opentelemetry-sdk
+opentelemetry-util-http==0.59b0
+    # via
+    #   opentelemetry-instrumentation-asgi
+    #   opentelemetry-instrumentation-django
+    #   opentelemetry-instrumentation-fastapi
+    #   opentelemetry-instrumentation-flask
+    #   opentelemetry-instrumentation-requests
+    #   opentelemetry-instrumentation-urllib
+    #   opentelemetry-instrumentation-urllib3
+    #   opentelemetry-instrumentation-wsgi
+packaging==25.0
+    # via
+    #   opentelemetry-instrumentation
+    #   opentelemetry-instrumentation-flask
 paho-mqtt==2.1.0
     # via isar
-portalocker==2.8.2
-    # via msal-extensions
-proto-plus==1.24.0
-    # via google-api-core
-protobuf==4.25.3
+protobuf==6.33.0
     # via
-    #   google-api-core
     #   googleapis-common-protos
-    #   proto-plus
-psutil==6.0.0
-    # via opencensus-ext-azure
-pyasn1==0.6.0
-    # via
-    #   pyasn1-modules
-    #   rsa
-pyasn1-modules==0.4.0
-    # via google-auth
-pycparser==2.22
+    #   opentelemetry-proto
+psutil==7.1.1
+    # via azure-monitor-opentelemetry-exporter
+pycparser==2.23
     # via cffi
-pydantic==2.7.4
+pydantic==2.12.3
     # via
     #   fastapi
     #   isar
     #   pydantic-settings
-pydantic-core==2.18.4
+pydantic-core==2.41.4
     # via pydantic
-pydantic-settings==2.3.3
+pydantic-settings==2.11.0
     # via isar
-pygments==2.18.0
-    # via rich
-pyjwt[crypto]==2.8.0
+pyjwt[crypto]==2.10.1
     # via
     #   fastapi-azure-auth
     #   isar
     #   msal
-python-dotenv==1.0.1
+python-dotenv==1.1.1
     # via
     #   isar
     #   pydantic-settings
-    #   uvicorn
-python-multipart==0.0.9
-    # via fastapi
-pyyaml==6.0.1
-    # via
-    #   isar
-    #   uvicorn
-requests==2.32.3
+pyyaml==6.0.3
+    # via isar
+requests==2.32.5
     # via
     #   azure-core
-    #   google-api-core
     #   isar
     #   msal
-    #   opencensus-ext-azure
-    #   opencensus-ext-requests
+    #   msrest
+    #   opentelemetry-exporter-otlp-proto-http
+    #   requests-oauthlib
     #   requests-toolbelt
+requests-oauthlib==2.0.0
+    # via msrest
 requests-toolbelt==1.0.0
     # via isar
-rich==13.7.1
-    # via typer
-rsa==4.9
-    # via google-auth
-scipy==1.13.1
+scipy==1.16.2
     # via alitra
-shellingham==1.5.4
-    # via typer
-six==1.16.0
-    # via
-    #   azure-core
-    #   isodate
-    #   opencensus
-    #   transitions
+six==1.17.0
+    # via transitions
 sniffio==1.3.1
+    # via anyio
+starlette==0.48.0
+    # via fastapi
+transitions==0.9.3
+    # via isar
+typing-extensions==4.15.0
     # via
     #   anyio
-    #   httpx
-starlette==0.37.2
-    # via fastapi
-transitions==0.9.1
-    # via isar
-typer==0.12.3
-    # via fastapi-cli
-typing-extensions==4.12.2
-    # via
     #   azure-core
     #   azure-identity
     #   azure-keyvault-secrets
     #   azure-storage-blob
     #   fastapi
+    #   grpcio
+    #   opentelemetry-api
+    #   opentelemetry-exporter-otlp-proto-grpc
+    #   opentelemetry-exporter-otlp-proto-http
+    #   opentelemetry-sdk
+    #   opentelemetry-semantic-conventions
     #   pydantic
     #   pydantic-core
-    #   typer
-ujson==5.10.0
-    # via fastapi
-urllib3==2.2.2
-    # via requests
-uvicorn[standard]==0.30.1
+    #   starlette
+    #   typing-inspection
+typing-inspection==0.4.2
     # via
-    #   fastapi
-    #   isar
-uvloop==0.19.0
-    # via uvicorn
-watchfiles==0.22.0
-    # via uvicorn
-websockets==12.0
-    # via uvicorn
-wrapt==1.16.0
-    # via opencensus-ext-requests
+    #   pydantic
+    #   pydantic-settings
+urllib3==2.5.0
+    # via requests
+uvicorn==0.38.0
+    # via isar
+wrapt==1.17.3
+    # via
+    #   opentelemetry-instrumentation
+    #   opentelemetry-instrumentation-dbapi
+    #   opentelemetry-instrumentation-urllib3
+zipp==3.23.0
+    # via importlib-metadata
